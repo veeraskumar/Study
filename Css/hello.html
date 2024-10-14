@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .main{
+            height: 600px;
+            width: 600px;
+            border: 2px solid black;
+            background-color: yellowgreen;
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            grid-template-rows: 200px 200px 200px;
+            align-items: center;
+            justify-items: center;
+        
+        }
+        .box{
+            height: 9rem;
+            width: 9rem;
+            border: 3px solid rgb(0, 0, 0);
+            box-shadow: 3px 3px 5px blue;
+        }
+
+        .item1{
+            background-color: red;
+            grid-column: -2/-1;
+            grid-row: -2/-1;
+        }
+        .item2{
+            background-color: aqua;
+            display: none;
+        }
+        .item3{
+            background-color: brown;
+        }
+        .item4{
+            background-color: chartreuse;
+            grid-column: 2/3;
+            grid-row: -3/-2;
+        }
+        .item5{
+            background-color: violet;
+            display: none;
+        }
+        .item6{
+            background-color:slategray ;
+            grid-column:  -4/-3;
+            grid-row: 3/4;
+        }
+        .item7{
+            background-color: peru;
+            grid-column: 3/4;
+            grid-row: -4/-3;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box item1">1</div>
+        <div class="box item2">2</div>
+        <div class="box item3">3</div>
+        <div class="box item4">4</div>
+        <div class="box item5">5</div>
+        <div class="box item6">6</div>
+        <div class="box item7">7</div>
+    </div>
+</body>
+</html>

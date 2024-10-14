@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        height: 200px;
+        width: 200px;
+        background-color: red;
+        border: 3px green solid;
+        font-size: 30px;
+        color: yellow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+
+      .box1:hover {
+        /* transform: rotate(360deg) rotateX(360deg) rotateY(360deg); */
+        transition: all 3s ease-in-out;
+        /* box-shadow: 4px 5px 4px yellow; */
+        border-radius: 30px;
+        box-shadow: 4px 4px;
+        transform: translate(-100px);
+      }
+
+      /* .box{
+            height: 900px;
+            width: 500px;
+            border: 3px red solid;
+            border-radius: 30px;
+            overflow: hidden;
+            border-radius: 50px;
+
+        }
+
+        .box img:hover{
+            transition: all 3s ease-in;
+            transform: translate(-100px, -100px);
+        } */
+         /* .box{
+            height: 400px;
+            width: 400px;
+            background: red;
+            border: 3px black solid;
+        }
+
+        .box:hover{
+            height: 250px;
+            width: 250px;
+            background-color: blue;
+            border: 6px red solid;
+            border-radius: 30px;
+            transition-property: all;
+            transition-duration: 5s;
+            transition-timing-function: ease-in;
+
+        } */
+      button {
+        height: 50px;
+        width: 100px;
+        background-color: greenyellow;
+        font-size: 16px;
+        color: red;
+        border: 3px green solid;
+        border-radius: 30px;
+      }
+
+      button:hover {
+        height: 60px;
+        width: 120px;
+        background: red;
+        color: yellow;
+        font-size: 20px;
+        border: none;
+        outline: 3px green solid;
+        outline-offset: 5px;
+        border-radius: 25px;
+        transition: all 3s ease-in;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+      <!-- <img src="src/image.png" alt="" width="900px" height="500px"> -->
+      <h2>hello</h2>
+    </div>
+    <div class="box"></div>
+    <button>click here</button>
+  </body>
+  </body>
+</html>

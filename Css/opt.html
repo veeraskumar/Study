@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         h1{
+            font-size: 5rem;
+            background: linear-gradient(45deg, green, red, greenyellow, grey);
+            color: transparent;
+            background-clip: text;
+            background-size: 60%;
+            display: inline-block;
+            
+
+         }
+
+         h1::before{
+            content: "";
+            width:20px;
+            height: 20px;
+            background: linear-gradient(45deg, green, red, greenyellow, grey);
+            position:absolute;
+            top: 170px;
+        
+         }
+
+         h1:hover::before{
+            width: 30%;
+            transition: all .26s ease;
+         }
+
+         .head1{
+            display: inline;
+            height: 150px;
+            width: 40px;
+            background-color: lightblue;
+
+         }
+
+         .pag{
+            height: 150px;
+            width: 150px;
+            overflow-y: scroll;
+            background-color: lightskyblue;
+         }
+
+         .pag:hover{
+            display: none; 
+         }
+
+         .pag1{
+            width: 300px;
+            height: 300px;
+            background-color: lightcoral;
+            display: flex;
+            align-self:center;
+         }
+
+         .head2 h2{
+            height: 40px;
+            width: 140px;
+            background-color: cornflowerblue;
+            border: 1px solid black;
+            display: inline;
+            margin: 10px;
+         }
+
+         .cot{
+            height: 450px;
+            width: 900px;
+            border: 2px solid red;
+            background-color: tomato;
+            font-size: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+         }
+
+         .content{
+         height: 80px;
+         width: 85px;
+         border: 2px solid  black;
+         }
+
+         .cot .content:nth-child(1){
+            background-color: aquamarine;
+         }
+         .cot .content:nth-child(2){
+            background-color: coral;
+         }
+         .cot .content:nth-child(3){
+            background-color:seagreen;
+         }
+         .cot .content:nth-child(4){
+            background-color: rgb(234, 237, 72);
+         }
+         .cot .content:nth-child(5){
+            background-color: rgb(219, 71, 222);
+         }
+         .cot .content:nth-child(6){
+            background-color: rgb(215, 57, 112);
+         }
+    </style>
+</head>
+<body>
+    
+   <h1>hello world</h1>
+
+   <h2 class="head1">hello World</h2>
+   <h2 class="head1">hello World</h2>
+
+   <p class="pag" id="pad">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut odit assumenda nesciunt, fugit natus qui praesentium? Necessitatibus quibusdam laboriosam consectetur nisi mollitia, id quasi neque dignissimos itaque saepe, officiis nihil reiciendis laudantium maxime ipsum cum. A eos placeat vel ratione officiis obcaecati nihil libero dicta blanditiis laborum. Reprehenderit nulla deleniti ullam exercitationem reiciendis sit quos dolores eaque minima, commodi, ex doloribus harum expedita velit ut ipsum magnam aut quae corporis. At iure reiciendis, minima autem dignissimos commodi quaerat amet quisquam consectetur voluptate. Culpa quibusdam nostrum ipsa enim voluptate adipisci harum architecto laborum veritatis temporibus. Porro sunt soluta repellat voluptates quia dolorum atque molestias laborum totam, debitis, fugit omnis earum consequatur facere in mollitia maiores asperiores, corrupti architecto doloribus officiis. Unde reiciendis facere laboriosam explicabo perspiciatis maiores ipsum et nam harum, iure iusto fugit delectus tempore corporis, sit, qui nobis consequuntur alias reprehenderit aliquid maxime in. Laudantium id quis tempore libero quia earum fugiat, reiciendis, hic numquam accusamus obcaecati magnam? Blanditiis ea cumque inventore nemo earum voluptates vitae sequi delectus. Inventore, quibusdam. Praesentium esse ullam accusamus quasi quae, quos distinctio dolorum reiciendis, velit dolores earum! Laborum consequuntur reprehenderit officia eos delectus assumenda commodi enim doloremque. Eveniet numquam libero neque nostrum dolorum.</p>
+
+   <!-- <button onclick=d"ocument.getElementById("pad").style.display="none"">click here</button> -->
+   <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos rerum temporibus molestias quaerat quas repellendus quibusdam architecto iusto sint officia eaque, incidunt, corrupti velit a id, quod accusantium. Voluptatum, sapiente.</h3>
+
+   <div class="head2">
+      <h2>hello</h2>
+      <h2>World</h2>
+   </div>
+
+   <div class="cot">
+      <div class="content">1</div>
+      <div class="content">2</div>
+      <div class="content">3</div>
+      <div class="content">4</div>
+      <div class="content">4</div>
+      <div class="content">5</div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display</title>
+  </head>
+  <body>
+    <script>
+      document.body.style.fontFamily = "Segoe UI";
+      let clk = document.createElement("button");
+      clk.innerHTML = "Click To Display";
+      clk.setAttribute("onclick", "get()");
+      clk.style.marginLeft = "550px";
+      clk.style.fontSize = "20px";
+      clk.style.padding = "15px";
+      document.body.appendChild(clk);
+
+      let full = document.createElement("div");
+      full.setAttribute("id", "box");
+      full.style.width = "100%";
+      full.style.height = "100vh";
+      full.style.borderColor = "black";
+      full.style.display = "flex";
+      full.style.alignItems = "center";
+      full.style.justifyContent = "space-evenly";
+      full.style.flexWrap = "wrap";
+      full.style.gap = "20px";
+      document.body.appendChild(full);
+
+      function get() {
+        let di = document.createElement("div");
+        di.setAttribute("id", "dis");
+        di.style.height = "440px";
+        di.style.width = "280px";
+        di.style.backgroundColor = "black";
+        di.style.color = "white";
+        di.style.borderRadius = "25px";
+        di.style.display = "flex";
+        di.style.flexDirection = "column";
+        di.style.alignItems = "center";
+        di.style.justifyContent = "center";
+        document.getElementById("box").appendChild(di);
+
+        let gi = document.createElement("img");
+        gi.src = "image.png";
+        gi.style.width = "180px";
+        gi.style.borderRadius = "25px";
+        document.getElementById("dis").appendChild(gi);
+
+        let pa = document.createElement("p");
+        pa.innerHTML =
+          " ✔ APJ Abdul Kalam was an Indian aerospace scientist and statesman who served as the 11th president of India from 2002 to 2007. Born and raised in a Muslim family in Rameswaram, Tamil Nadu, he studied physics and aerospace engineering. ";
+        pa.style.width = "95%";
+        pa.style.marginLeft = "2.5px";
+        pa.style.textAlign = "justify";
+        pa.style.fontSize = "15px";
+        document.getElementById("dis").appendChild(pa);
+
+        let half = document.createElement("div");
+        half.setAttribute("id", "insi");
+        half.style.width = "250px";
+
+        half.style.display = "flex";
+        half.style.alignItems = "center";
+        half.style.justifyContent = "space-evenly";
+        document.getElementById("dis").appendChild(half);
+
+        let btn1 = document.createElement("button");
+        btn1.innerHTML = " ❤ Like";
+        btn1.style.fontSize = "15px";
+        btn1.style.borderRadius = "10px";
+        document.getElementById("insi").appendChild(btn1);
+
+        let btn2 = document.createElement("button");
+        btn2.innerHTML = " Comment ";
+        btn2.style.fontSize = "15px";
+        btn2.style.borderRadius = "10px";
+        document.getElementById("insi").appendChild(btn2);
+      }
+    </script>
+  </body>
+</html>

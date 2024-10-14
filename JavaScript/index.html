@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="Str()">String + num</button>
+    <button onclick="un()">undefined</button>
+    <button onclick="ll()">Null</button>
+    <button onclick="boo()">boolean</button>
+    <button onclick="arr()">Array</button>
+    <script>
+      let a = "10" + 10;
+      let b = undefined;
+      let c = null;
+      let d = true;
+      let e = [1, 2, 3, 4, 5, 6, "a", "b", "hello"];
+      let u = { name: "veeras", ages: 24 };
+      // alert(`String + no = ${a} \n Undefine : ${b} \n null : ${c} \n boolean : ${d} \n Arr : ${e} \, obj : ${u}`)
+
+      let Str = () => {
+        alert(a);
+      };
+      let un = () => {
+        alert(b);
+      };
+      let ll = () => {
+        alert(c);
+      };
+      let boo = () => {
+        alert(d);
+      };
+      let arr = () => {
+        alert(e);
+      };
+    </script>
+
+    <hr />
+    <button onclick="get()">Confrim</button>
+    <h3 id="text"></h3>
+    <hr />
+    <br />
+    <script>
+      function get() {
+        let msg;
+        if (confirm("Do you Want Delete the Data")) {
+          msg = "Yes, saved";
+        } else {
+          msg = "no, saved Lose of data";
+        }
+        document.getElementById("text").innerHTML = msg;
+      }
+    </script>
+
+    <button onclick="pro()">Click</button>
+    <h3 id="xyz"></h3>
+    <script>
+      function pro() {
+        let msg1;
+        let uname = prompt("Enter your name : ", "your Name ");
+        if (uname === "" || uname === null) {
+          msg1 = "There is no Name Enter";
+        } else {
+          msg1 = `Enter your Name : ${uname}`;
+        }
+        document.getElementById("xyz").innerHTML = msg1;
+      }
+    </script>
+  </body>
+</html>

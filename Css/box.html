@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        width: 99%;
+        height: 98vh;
+        grid-template-columns: 48vh 48vh;
+        grid-template-rows: 48% 48%;
+        grid-template-areas: "a1 a2" "b1 b2";
+        border: 1px solid red;
+      }
+      .box2 {
+        border: 1px solid black;
+        grid-area: a1;
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+        animation: move 2s linear;
+        top: 550px;
+        left: 0;
+      }
+
+      @keyframes move {
+        0% {
+          top: 550px;
+          left: 5px;
+          background: black;
+        }
+        25% {
+          top: 0px;
+          left: 320px;
+          background-color: blue;
+        }
+        50% {
+          left: 550px;
+          top: 200px;
+          border-color: crimson;
+        }
+        75% {
+          left: 770px;
+          top: 0px;
+          background-color: aqua;
+        }
+        100% {
+          left: 1260px;
+          top: 550px;
+          background-color: yellow;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box2"></div>
+  </body>
+</html>

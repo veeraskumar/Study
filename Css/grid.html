@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .main{
+            height: 99vh;
+            width: 100%;
+            background-color: burlywood;
+            display: grid;
+            grid-template-columns: 300px auto auto;
+            grid-template-rows: 50px auto 100px;
+            grid-template-areas: "xyz xyz xyz" "abc mno mno" "ghi ghi ghi";
+            gap: 10px;
+        }
+
+        .cant{
+            width: 99%;
+            height: 100%;
+            border: solid;
+            border-radius: 10px;
+
+        }
+
+        .head{
+            background: red;
+            grid-area: xyz;
+        }
+        .side{
+            background-color: blue;
+            grid-area: abc;
+        }
+        .content{
+            background-color: green;
+            grid-area: mno;
+        }
+        .bot{
+            background-color: aqua;
+            grid-area: ghi;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <nav class="head cant"></nav>
+        <aside class="side cant"></aside>
+        <article class="content cant"></article>
+        <footer class="bot cant"></footer>
+    </div>
+</body>
+</html>

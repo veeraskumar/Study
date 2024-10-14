@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .di1 {
+        height: 900px;
+      }
+
+      .jig {
+        visibility: hidden;
+        margin-left: 350px;
+      }
+      .ani {
+        visibility: visible;
+        animation: scrl 3s 1 forwards;
+      }
+      @keyframes scrl {
+        form {
+          opacity: 0;
+          transform: translatey(0);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(-70%);
+        }
+      }
+    </style>
+  </head>
+  <body
+    onscroll="scrollpg()"
+    onresize="size()"
+    id="cap"
+    style="background-color: green"
+  >
+    <div class="di1">
+      <h1 id="upe">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium,
+        nesciunt!
+      </h1>
+      <h1 id="out"></h1>
+    </div>
+    <img
+      src="https://static.vecteezy.com/system/resources/previews/011/934/414/original/gold-lightning-bolt-icon-free-png.png"
+      alt=""
+      id="img-ph"
+      width="200px"
+      class="jig"
+    />
+    <script>
+      function scrollpg() {
+        let eImg = document.getElementById("img-ph");
+        let dimg = document.documentElement.scrollTop;
+        console.log(dimg);
+        if (dimg > 350) {
+          eImg.classList.add("ani");
+        }
+      }
+    </script>
+    <script>
+      function size() {
+        let a = window.outerHeight;
+        let b = window.outerWidth;
+        document.getElementById("out").innerHTML = `Size = ${a} x ${b}`;
+        if (b < 400) {
+          document.getElementById("cap").style.backgroundColor = "red";
+          document.getElementById("upe").style.color = "white";
+        } else if (b > 400 && b < 800) {
+          document.getElementById("cap").style.backgroundColor = "blue";
+          document.getElementById("upe").style.color = "yellow";
+        } else if (b > 800) {
+          document.getElementById("cap").style.backgroundColor = "green";
+          document.getElementById("upe").style.color = "lightseagreen";
+        }
+      }
+    </script>
+  </body>
+</html>

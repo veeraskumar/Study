@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .page{
+            width: 100%;
+            height: 99vh;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 49vh 49vh;
+            grid-template-areas: "a1 a2" "b1 b2";
+            gap: 4px;
+        }
+
+        .box1{
+            grid-area: a1;
+            border: 1px black solid;
+            background-color: black;
+        }
+
+        .plate{
+            position: absolute;
+            height: 10px;
+            width: 300px;
+            background: white;
+            top: 300px;
+            left: 150px;
+            border-radius: 10px;
+        }
+
+        .ball{
+            width: 40px;
+            height: 40px;
+            background: red;
+            border-radius: 50px;
+            position: absolute;
+            left: 280px;
+            top: 20px;
+            animation: bounce 1s infinite linear alternate;
+            box-shadow: 0px 0px 25px white;
+        }
+
+        @keyframes bounce {
+            from{
+                transform: translateY(0%);
+                background-color: yellow;
+            }
+            to{
+                transform: translateY(100%);
+                position: absolute;
+                top: 220px;
+            }            
+        }
+
+        .box2{
+            grid-area: a2;
+            border: 1px black solid;
+        }
+
+        .f1, .f2, .f3, .f4, .f5{
+            animation: break 2s linear forwards;
+        }
+
+        .fall{
+            position: absolute;
+            top: 20px;
+            right: 260px;
+            font-size: 60px;
+            font-family: cursive;
+        }
+
+        .f1{
+            animation-delay: 0s;
+        }
+        .f2{
+            animation-delay: 2s;
+        }
+        .f3{
+            animation-delay: 4s;
+        }
+        .f4{
+            animation-delay:  6s;
+        }
+        .f5{
+            animation-delay: 8s;
+        }
+
+        @keyframes break {
+            from{
+                transform: translateY(0);
+                position: absolute;
+                top: 10px;
+            }
+            to{
+                transform: translateY(100%);
+                position: absolute;
+                opacity: 0;
+                top: 220px;
+            }
+        }
+
+        .box3{
+            grid-area: b1;
+            border: 1px black solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .zoom{
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            margin: 35px;
+            animation: bloom 3s linear infinite ;
+        }
+
+        .round1{
+            background-color: #4285f4;
+            animation-delay: 1S;
+        }
+
+        .round2{
+            background: #ea4335;
+            animation-delay: 1.5s;
+        }
+
+        .round3{
+            background: #FBBC05;
+            animation-delay: 3s;
+        }
+
+        .round4{
+            background: #34a853;
+            animation-delay: 4S;
+        }
+
+        .round5{
+            background: black;
+            animation-delay: 5s;
+        }
+
+        @keyframes bloom {
+            from{ transform: scale(1.9);}
+            to{ transform: scale(.5); }            
+        }
+
+        .box4{
+            background: black;
+            color: white;
+            grid-area: b2;
+            border: 1px black solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 20px;
+            font-size: 40px;
+        }
+
+        h1{
+            animation: hello 3s linear infinite ;
+       }
+
+       @keyframes hello {
+        from{ transform: rotate(0deg);}
+        to{transform: rotate(360deg);}
+       }
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="box1">
+            <div class="ball"></div>
+            <div class="plate"></div>
+        </div>
+        <div class="box2">
+            <div class="letter">
+                <div class="fall"><span class="f1">H</span><span class="f2">E</span><span class="f3">L</span><span class="f4">L</span><span class="f5">O</span></div>
+            </div>
+        </div>
+        <div class="box3">
+            <div class="round1 zoom"></div>
+            <div class="round2 zoom"></div>
+            <div class="round3 zoom"></div>
+            <div class="round4 zoom"></div>
+            <div class="round5 zoom"></div>
+        </div>
+        <div class="box4">
+            <h1>R</h1><h1>O</h1><h1>T</h1><h1>A</h1><h1>T</h1><h1>E</h1>
+        </div>
+    </div>
+</body>
+</html>

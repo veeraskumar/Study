@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="get()">Click</button>
+    <h1 id="msg"></h1>
+    <script>
+      let pov = [];
+      let msg;
+      function get() {
+        let text = "do you want dead ?";
+        let text1 = "Welcome to Dead paradise!";
+        let text2 = "How many time , you haven tried ?";
+        let text3 = "Then why are trying !?";
+        if (confirm(text)) {
+          alert(text1);
+          if (confirm(text2)) {
+            let num = parseInt(prompt("how time are tried ?"));
+            if (num === null || num === "") {
+              alert("Enter any things ?!");
+            } else {
+              for (let i = 0; i < num; i++) {
+                let num1 = prompt("When all it happen ?");
+                if (num1 === null || num1 === "") {
+                  alert("Enter any things ?!");
+                } else {
+                  pov.push(num1);
+                }
+                for (const iterator of pov) {
+                  document.getElementById(
+                    "msg"
+                  ).innerHTML += `${iterator} <br>`;
+                }
+              }
+            }
+          } else {
+            alert(text3);
+          }
+        } else {
+          alert("Request Cancelled");
+        }
+      }
+    </script>
+  </body>
+</html>

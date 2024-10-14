@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-6</title>
+    <style>
+        .main{
+            font-family: 'Times New Roman', Times, serif;
+            height: 95vh;
+            width: 99%;
+            border: solid;
+            display: grid;
+            grid-template-columns: 180px auto 180px;
+            grid-template-rows: 110px auto 80px;
+            grid-template-areas: "a1 a1 a1" "b1 c1 e1" "d1 d1 e1";
+        }
+
+        .content{
+            border: solid;
+        }
+
+        .art{
+            grid-area: c1;
+            background-color: darkslategray;
+            color: white;
+            overflow-y: scroll;
+
+        }
+        .art .img{
+            float: right;
+            margin: 20px;
+        }
+        .art .img2{
+            float: left;
+            margin: 10px;
+            margin-right: 20px;
+        }
+        
+        .nav{
+            grid-area: a1;
+            text-align: center;
+            background-color: darkslategray;
+            color: white;
+            font-size: 30px;
+            padding-top: 25px;
+            word-spacing: 30px;
+            text-transform: capitalize;
+            }
+            .nav a{
+                text-decoration: none;
+                color: white;
+            }
+        .side{
+            grid-area: b1;
+            background-color: green;
+            color: white;
+            overflow-y: scroll;
+        }
+        .side a{
+            display: block;
+            text-decoration: none;
+            background-color: darkslategrey;
+            color: white;
+            line-height: 20px;
+        }
+        .side h1{
+            background-color: green;
+            position: sticky;
+            top: 0;
+        }
+        .sec{
+            grid-area: e1;
+            background-color: darkslategrey;
+            color: white;
+        }
+        .sec a{
+            text-decoration: none;
+            color: white;
+            line-height: 20px;
+        }
+        .fot{
+            grid-area: d1;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            background-color: darkslategrey;
+            color: white;
+        }
+
+        .fot img{
+            height: 50px;
+            width: 50px;
+            padding-left: 20px;
+         }
+
+         a:hover{
+            color: yellow;
+         }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <nav class="nav content">
+            <a href="#">Home</a>
+            <a href="#">details</a>
+            <a href="#">about</a>
+            <a href="#">login</a>
+        </nav>
+        <aside class="side content">
+            <h1 style="text-align: center;">HTML Tutorial</h1>
+            <a href="#">HTML Introduction</a>
+            <a href="#">HTML Editors</a>
+            <a href="#">HTML Basic</a>
+            <a href="#">HTML Elements</a>
+            <a href="#">HTML Attributes</a>
+            <a href="#">HTML Headings</a>
+            <a href="#">HTML Paragraphs</a>
+            <a href="#">HTML Styles</a>
+            <a href="#">HTML Formatting</a>
+            <a href="#">HTML Quotations</a>
+            <a href="#">HTML Comments</a>
+            <a href="#">HTML Colors</a>
+            <a href="#">HTML CSS</a>
+            <a href="#">HTML Links</a>
+            <a href="#">HTML Images</a>
+            <a href="#">HTML Favicon</a>
+            <a href="#">HTML Page Title</a>
+            <a href="#">HTML Tables</a>
+            <a href="#">HTML Lists</a>
+            <a href="#">HTML Table</a>
+        </aside>
+        <article class="art content">
+            <h1 style="text-align: center;">HTML Introduction</h1>
+            <p style="text-indent: 20px;">HTML is the standard markup language for creating Web pages.</p>
+            <img class="img" src="https://www.gcreddy.com/wp-content/uploads/2016/02/HTML-Basics.jpg" alt="" width="180px">
+            <h2>What is HTML?</h2>
+            <ul>
+                <li>HTML stands for Hyper Text Markup Language</li>
+                <li>HTML is the standard markup language for creating Web pages</li>
+                <li>HTML describes the structure of a Web page</li>
+                <li>HTML consists of a series of elements</li>
+                <li>HTML elements tell the browser how to display the content</li>
+                <li>HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.</li>
+            </ul><br>
+            <h2>What is an HTML Element?</h2>
+            <img src="https://www.w3schools.com/html/img_chrome.png" alt="" height="230px" class="img2">
+            <p>An HTML element is defined by a start tag, some content, and an end tag:</p>
+            <h3>&lt;tagname&gt; Content goes here... &lt;/tagname&gt;</h3>
+            <p>The HTML element is everything from the start tag to the end tag:</p>
+            <h3>&lt;h1&gt; My First Heading&lt;/h1&gt;</h3>
+            <h3>&lt;p&gt; My first paragraph.&lt;/p&gt;</h3>
+        </article>
+        <section class="sec content">
+            <h1 style="background-color: green; text-align: center;">Program language</h1>
+            <ol>
+                <a href=""><li>Javascript</li></a>
+                <a href=""><li>Python</li></a>
+                <a href=""><li>Go</li></a>
+                <a href=""><li>Java</li></a>
+                <a href=""><li>Kotlin</li></a>
+                <a href=""><li>PHP</li></a>
+                <a href=""><li>C#</li></a>
+                <a href=""><li>Swift</li></a>
+                <a href=""><li>R</li></a>
+                <a href=""><li>Ruby</li></a>
+                <a href=""><li>C and C++</li></a>
+                <a href=""><li>Matlab</li></a>
+                <a href=""><li>TypeScript</li></a>
+                <a href=""><li>Scala</li></a>
+                <a href=""><li>SQL</li></a>
+                <a href=""><li>HTML</li></a>
+                <a href=""><li>CSS</li></a>
+                <a href=""><li>NoSQL</li></a>
+                <a href=""><li>Rust</li></a>
+                <a href=""><li>Perl</li></a>
+            </ol>
+        </section>
+        <footer class="fot content">
+            <a href=""><img src="https://img.icons8.com/?size=100&id=32323&format=png&color=000000" alt="" srcset=""></a>
+            <a href=""><img src="https://img.icons8.com/?size=100&id=13912&format=png&color=000000" alt=""></a>
+            <a href=""><img src="https://img.icons8.com/?size=100&id=7OeRNqg6S7Vf&format=png&color=000000" alt=""></a>
+            <a href=""><img src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000" alt=""></a>
+            <a href=""><img src="https://img.icons8.com/?size=100&id=53388&format=png&color=000000" alt=""></a>
+            <a href=""><img src="https://img.icons8.com/?size=100&id=9659&format=png&color=000000" alt=""></a>
+            <a href=""><img src="https://img.icons8.com/?size=100&id=19318&format=png&color=000000" alt=""></a>
+            <a href=""><img src="https://img.icons8.com/?size=100&id=oWiuH0jFiU0R&format=png&color=000000" alt=""></a>
+            <a href=""><img src="https://img.icons8.com/?size=100&id=13963&format=png&color=000000" alt=""></a>
+            <a href=""><img src="https://img.icons8.com/?size=100&id=xX_DGGk3VqYA&format=png&color=000000" alt=""></a>
+        </footer>
+    </div>
+</body>
+</html>

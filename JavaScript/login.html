@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: teal;
+        font-family: "Segoe UI";
+      }
+      form {
+        width: 400px;
+        height: 150px;
+        border: 1px solid black;
+        text-align: center;
+        padding: 40px;
+        border-radius: 10px;
+        background-color: rgb(237, 237, 237, 0.1);
+        margin-top: 250px;
+        margin-left: 400px;
+      }
+      button,
+      .apt {
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+        background-color: rgb(196, 196, 196);
+        margin-top: 10px;
+        margin-right: 5px;
+      }
+
+      .sid {
+        width: 99%;
+        height: 99vh;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        background-color: rgb(237, 237, 237, 0.7);
+        padding-top: 300px;
+        padding-left: 500px;
+        border-radius: 10px;
+        display: none;
+      }
+      .btn {
+        margin-left: 100px;
+        background-color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" id="form-out">
+      <label for="name">Username : </label>
+      <input type="text" name="name" id="" /> <br /><br />
+      <label for="pass">Password : </label>
+      <input type="password" name="pass" id="" /><br /><br />
+      <input type="button" value="Submit" class="apt" /> <button>cancel</button>
+    </form>
+    <div id="hid" class="sid">
+      <h1>The Request is accpeted .</h1>
+      <button onclick="out()" class="btn">OK</button>
+    </div>
+    <script>
+      document.getElementById("form-out").addEventListener("click", suc);
+      function suc() {
+        document.getElementById("hid").style.display = "block";
+      }
+      function out() {
+        document.getElementById("hid").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

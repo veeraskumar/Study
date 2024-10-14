@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-10</title>
+    <style>
+      * {
+        margin: 0%;
+      }
+
+      .main {
+        width: 99%;
+        height: 99vh;
+        border: 1px black solid;
+        position: absolute;
+        animation: move 10s linear infinite;
+      }
+
+      @keyframes move {
+        0% {
+          right: 0;
+        }
+        100% {
+          right: 1200px;
+        }
+      }
+
+      .place {
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(
+          0deg,
+          black,
+          #d7798b,
+          #7e397c,
+          #3d1c51,
+          black
+        );
+      }
+
+      .sky {
+        width: 100%;
+        height: 10%;
+        position: relative;
+        display: flex;
+        gap: 120px;
+      }
+
+      .sky .moon {
+        width: 80px;
+        height: 80px;
+        background-color: whitesmoke;
+        border-radius: 50px;
+        position: absolute;
+        top: 5px;
+        left: 900px;
+        box-shadow: 16px 0px 2px rgb(72, 64, 64) inset;
+      }
+
+      .sky .star1 {
+        position: relative;
+        top: 30px;
+      }
+
+      .sky .star2 {
+        position: relative;
+        top: 15px;
+      }
+
+      .sky .star3 {
+        position: relative;
+        top: 60px;
+      }
+
+      .bulid {
+        width: 100%;
+        height: 50%;
+        position: relative;
+        display: flex;
+        gap: 30px;
+        overflow: hidden;
+      }
+
+      .home {
+        width: 200px;
+        height: 300px;
+        background-color: black;
+        position: relative;
+        top: 30px;
+        left: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .home div {
+        width: 70px;
+        height: 50px;
+        background-color: yellow;
+        border: 2px blue solid;
+        margin-left: 15px;
+        margin-top: 10px;
+      }
+
+      .off {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 80px;
+        left: 40px;
+      }
+
+      .off .room1 {
+        width: 150px;
+        height: 100px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .room1 div {
+        width: 60px;
+        height: 40px;
+        background-color: yellow;
+        border: 2px blue solid;
+      }
+
+      .off .room2 {
+        width: 290px;
+        height: 150px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .room2 div {
+        width: 80px;
+        height: 60px;
+        background-color: yellow;
+        border: 2px blue solid;
+      }
+
+      .steal {
+        width: 2670px;
+        height: 15%;
+        border: 1px black solid;
+        position: absolute;
+        top: 300px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .steal .hora {
+        width: 100%;
+        height: 25px;
+        background: gray;
+      }
+
+      .steal .ver {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .steal .ver div {
+        height: 73px;
+        width: 30px;
+        background: gray;
+      }
+
+      .road {
+        width: 100%;
+        height: 30%;
+        border: 1px black solid;
+        position: relative;
+        background-color: rgb(22, 19, 19);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+      }
+
+      .road div {
+        width: 300px;
+        height: 30px;
+        background-color: white;
+      }
+
+      .gra {
+        width: 100%;
+        height: 8%;
+        background-color: grey;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 100px;
+      }
+
+      .car {
+        width: 400px;
+        height: 200px;
+        position: fixed;
+        top: 300px;
+        left: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .car .car-top {
+        width: 200px;
+        height: 60px;
+        background-color: red;
+        border-radius: 30px 30px 0px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .glass1 {
+        width: 60px;
+        height: 40px;
+        background-color: lightblue;
+        border-radius: 20px 0px 0px 0px;
+      }
+
+      .glass2 {
+        width: 60px;
+        height: 40px;
+        background-color: lightblue;
+        border-radius: 0px 20px 0px 0px;
+      }
+
+      .car .car-bot {
+        width: 350px;
+        height: 70px;
+        background-color: red;
+        border-radius: 30px 30px 0px 0px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .light1 {
+        width: 20px;
+        height: 10px;
+        background-color: yellow;
+        position: relative;
+        left: 180px;
+        top: 20px;
+        border-radius: 10px 0px 0px 10px;
+      }
+
+      .light2 {
+        width: 20px;
+        height: 10px;
+        background-color: black;
+        position: relative;
+        left: 20px;
+        top: 10px;
+        border-radius: 10px 10px 10px 10px;
+      }
+
+      .light3 {
+        width: 20px;
+        height: 10px;
+        background-color: black;
+        position: relative;
+        right: 50px;
+        top: 10px;
+        border-radius: 10px 10px 10px 10px;
+      }
+
+      .car .wheel {
+        width: 400px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 120px;
+        position: relative;
+        bottom: 20px;
+      }
+
+      .tyer1 {
+        width: 60px;
+        height: 60px;
+        background-color: rgb(47, 42, 42);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: rote 10s linear infinite;
+      }
+
+      .tyer2 {
+        width: 60px;
+        height: 60px;
+        background-color: rgb(47, 42, 42);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: rote 10s linear infinite;
+      }
+
+      @keyframes rote {
+        0% {
+          transform: rotate(72deg);
+        }
+        20% {
+          transform: rotate(144deg);
+        }
+        40% {
+          transform: rotate(216deg);
+        }
+        60% {
+          transform: rotate(288deg);
+        }
+        80% {
+          transform: rotate(360deg);
+        }
+        100% {
+          transform: rotate(432deg);
+        }
+      }
+
+      .center {
+        width: 20px;
+        height: 20px;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="place">
+        <div class="sky">
+          <div class="moon"></div>
+          <div class="star1">🌟</div>
+          <div class="star2">🌟</div>
+          <div class="star3">🌟</div>
+          <div class="star1">🌟</div>
+          <div class="star3">🌟</div>
+          <div class="star2">🌟</div>
+          <div class="star3">🌟</div>
+          <div class="star2">🌟</div>
+          <div class="star1">🌟</div>
+          <div class="star3">🌟</div>
+          <div class="star2">🌟</div>
+          <div class="star3">🌟</div>
+          <div class="star2">🌟</div>
+          <div class="star1">🌟</div>
+          <div class="star3">🌟</div>
+          <div class="star2">🌟</div>
+          <div class="star3">🌟</div>
+          <div class="star2">🌟</div>
+          <div class="star1">🌟</div>
+        </div>
+        <div class="bulid">
+          <div class="home">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <div class="off">
+            <div class="room1">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="room2">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+
+          <div class="home">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <div class="home">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <div class="off">
+            <div class="room1">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="room2">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+
+          <div class="home">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <div class="off">
+            <div class="room1">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="room2">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+
+          <div class="off">
+            <div class="room1">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="room2">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+
+          <div class="home">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <div class="home">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+        <div class="steal">
+          <div class="hora"></div>
+          <div class="ver">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="road">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="gra">
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+          <img src="grass.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="car">
+      <div class="car-top">
+        <div class="glass1"></div>
+        <div class="glass2"></div>
+      </div>
+      <div class="car-bot">
+        <div class="light1"></div>
+        <div class="light2"></div>
+        <div class="light3"></div>
+      </div>
+      <div class="wheel">
+        <div class="tyer1"><div class="center"></div></div>
+        <div class="tyer2"><div class="center"></div></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .dis {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+      }
+
+      #id1 {
+        border: solid red;
+      }
+
+      #id2 {
+        border: solid hsl(251, 100%, 50%);
+      }
+
+      .myclass {
+        color: red;
+      }
+
+      .myclass1 {
+        /* display: none; */
+        visibility: hidden;
+      }
+
+      .over {
+        color: red;
+        text-shadow: 2px 2px 3px black;
+      }
+
+      .shake {
+        outline: 2px solid lawngreen;
+        animation: sha 0.4s ease-in-out alternate;
+      }
+      @keyframes sha {
+        0% {
+          transform: translate(10px);
+        }
+        25% {
+          transform: translate(0px);
+        }
+        50% {
+          transform: translate(-10px);
+        }
+        75% {
+          transform: translate(0px);
+        }
+        100% {
+          transform: translate(10px);
+        }
+        120% {
+          transform: translate(0px);
+        }
+      }
+
+      .para {
+        width: 500px;
+        height: 300px;
+        overflow-x: hidden;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="" id="num" />
+    <button onclick="get()">Click</button>
+    <p id="txt"></p>
+    <br />
+    <hr />
+    <br />
+    <script>
+      function get() {
+        document.getElementById("txt").innerText = `${
+          document.getElementById("num").value
+        }, welcome !`;
+      }
+    </script>
+    <label for="">Enter 1st number : </label
+    ><input type="number" id="num1" /><br /><br />
+    <label for="">Enter 2st number : </label
+    ><input type="number" id="num2" /><br /><br />
+    <h3 id="txt4">1st + 2st = 1st+2st</h3>
+    <br />
+    <button onclick="add()">Add</button>
+    <br />
+    <hr />
+    <br />
+    <script>
+      function add() {
+        let y = parseInt(document.getElementById("num1").value);
+        let w = parseInt(document.getElementById("num2").value);
+        document.getElementById("txt4").innerHTML = `${y} + ${w} = ${y + w}`;
+      }
+    </script>
+
+    <label for="eng1">Enter the Number : </label
+    ><input type="number" name="eng1"  id="num12" />
+    <button onclick="hi()">Click to Squ & Cub</button>
+    <h3 id="hi1">Square of 0 is : 00 . | Cube of 0 is : 00 .</h3>
+    <script>
+      function hi() {
+        let o = parseInt(document.getElementById("num12").value);
+        document.getElementById("hi1").innerHTML = ` Square of ${o} is : ${
+          o ** 2
+        } . |  Cube of ${o} is : ${o ** 3} .`;
+      }
+    </script>
+    <hr />
+    <br />
+    <button id="but1">Click</button>
+    <button onclick="get1()">hello</button>
+    <script>
+      function get1() {
+        document.getElementById("but1").innerHTML = "onclick";
+      }
+    </script>
+    <br />
+    <br />
+
+    <label for="name">Enter Name : </label
+    ><input type="text" name="" id="push" />
+    <br />
+    <button onclick="get2()">Push</button>
+    <button onclick="get3()">Display</button>
+    <h3 id="h34"></h3>
+    <script>
+      let xy = [];
+      let i;
+      function get2() {
+        xy.push(document.getElementById("push").value);
+      }
+      function get3() {
+        for (i = 0; i < xy.length; i++) {
+          document.getElementById("h34").innerHTML += `${xy[i]} <br>`;
+        }
+      }
+    </script>
+    <br />
+    <hr />
+    <br />
+    <textarea name="hi" id="txt5" cols="25" rows="5"></textarea
+    ><button onclick="get4()">send</button
+    ><textarea name="" id="txt6" cols="25" rows="5"></textarea>
+    <script>
+      function get4() {
+        let jo = document.getElementById("txt5").value;
+        document.getElementById("txt6").innerHTML = jo.toUpperCase();
+      }
+    </script>
+    <div>
+      <h1 id="sam">Hello</h1>
+      <button onclick="get5()">Fetch</button>
+      <button onclick="out()">Send</button>
+      <h4 id="sam1"></h4>
+      <script>
+        let yo = null;
+        function get5() {
+          yo = document.getElementById("sam").textContent;
+        }
+        function out() {
+          document.getElementById("sam1").innerHTML = yo;
+        }
+      </script>
+    </div>
+    <div>
+      <input type="number" name="" id="inp" value="0" /><button
+        onclick="out1()"
+      >
+        Send
+      </button>
+      <h3 id="sam2">0's floor value is 0</h3>
+      <br />
+      <input type="number" id="inp1" value="0" min="0" max="20" /><button
+        onclick="get6()"
+      >
+        Get
+      </button>
+      <h2 id="otp">Generating OTP of 0 is 0</h2>
+      <br />
+      <label for="">Enter your Email : </label
+      ><input type="email" name="mail" id="out2" />
+      <button type="button" onclick="get7()">Click</button>
+      <h3 id="sam3">Email : **********</h3>
+      <br />
+      <button type="button" onclick="get8()">Click</button>
+      <script>
+        function out1() {
+          let wo = parseFloat(document.getElementById("inp").value);
+          document.getElementById(
+            "sam2"
+          ).innerHTML = `${wo}'s floor value is ${Math.floor(wo)} `;
+        }
+        let otp;
+        function get6() {
+          let qo = parseInt(document.getElementById("inp1").value);
+          document.getElementById(
+            "otp"
+          ).innerHTML = ` Generating OTP of ${qo} is ${Math.floor(
+            Math.random() * (10 ** qo - 10 ** (qo - 1)) + 10 ** (qo - 1)
+          )}`;
+        }
+        function get7() {
+          let out = "";
+          let eo = document.getElementById("out2").value;
+          for (let i = 0; i < 4; i++) {
+            out += eo[i];
+          }
+          document.getElementById("sam3").innerHTML = `Email : ${out.padEnd(
+            eo.length,
+            "*"
+          )}`;
+        }
+        function get8() {
+          let no = {
+            Brand: "vivo",
+            Model: "Y30",
+            Year: "2021",
+            Price: "14999",
+          };
+          let no1 = JSON.stringify(no);
+          let no2 = JSON.parse(no1);
+          document.getElementById("sam3").innerHTML = `${no1}`;
+        }
+      </script>
+      <br />
+      <hr />
+      <br />
+
+      <button onclick="get9()">Click here to Display img</button><br />
+      <img id="out3" width="10%" />
+      <script>
+        function get9() {
+          document.getElementById("out3").src = "logo.png";
+        }
+      </script>
+    </div>
+    <br />
+    <hr />
+    <hr />
+    <br />
+    <div>
+      <h1 class="text">This h1 element</h1>
+      <h1 class="text">This h1 element</h1>
+      <h1 class="text">This h1 element</h1>
+      <h2 class="text">This h2 element</h2>
+      <h3 class="text">this h3 element</h3>
+      <div class="text">This the div element</div>
+      <span class="text">This span element</span>
+      <p id="para"></p>
+      <button onclick="get10()">Click to class</button>
+      <button onclick="get11()">Count</button>
+      <script>
+        function get10() {
+          let all = document.getElementsByClassName("text");
+          console.log(all);
+          console.log(all[0]);
+          console.log(all[0].textContent);
+          for (let i = 0; i < all.length; i++) {
+            console.log(all[i].textContent);
+            all[i].style.color = "red";
+            all[i].style.margin = "30px";
+          }
+        }
+
+        function get11() {
+          let head = document.getElementsByTagName("h1");
+          document.getElementById("para").innerHTML = head.length;
+        }
+      </script>
+      <hr />
+      <div class="dis">
+        <div id="id1">
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+        </div>
+        <button onclick="get12()">Click</button>
+        <script>
+          function get12() {
+            let que = document.getElementById("id1").querySelector("h3");
+            que.style.color = "red";
+          }
+        </script>
+        <div id="id2">
+          <h3>Lorem ipsum dolor sit, amet consectetur adipisicing.</h3>
+          <h3>Lorem ipsum dolor sit, amet consectetur adipisicing.</h3>
+          <h3>Lorem ipsum dolor sit, amet consectetur adipisicing.</h3>
+          <h3>Lorem ipsum dolor sit, amet consectetur adipisicing.</h3>
+          <h3>Lorem ipsum dolor sit, amet consectetur adipisicing.</h3>
+          <h3>Lorem ipsum dolor sit, amet consectetur adipisicing.</h3>
+          <h3>Lorem ipsum dolor sit, amet consectetur adipisicing.</h3>
+        </div>
+        <button onclick="get13()">Click</button>
+        <script>
+          function get13() {
+            let cls = document.getElementById("id2").querySelectorAll("h3");
+            for (let i of cls) {
+              let xo = Math.random() * (350 - 0) - 0;
+              i.style.color = `hsl(${xo}, 100%, 50%)`;
+            }
+          }
+        </script>
+      </div>
+      <hr />
+      <h1 id="out">Lorem ipsum dolor sit amet, consectetur adipisicing.</h1>
+      <button onclick="add()">Add CSS</button>
+      <button onclick="remove()">Add CSS</button>
+      <script>
+        function add() {
+          let ad = document.getElementById("out").classList.add("myclass");
+        }
+        function remove() {
+          let ad = document.getElementById("out").classList.remove("myclass");
+        }
+      </script>
+      <br /><br />
+      <p id="hid">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo dolore
+        alias distinctio tenetur hic incidunt, neque quis sequi aspernatur
+        delectus, modi voluptatum aperiam quos? Fugit dolorem eligendi natus est
+        asperiores!
+      </p>
+      <button onclick="get14()" id="cha">hidden</button>
+      <script>
+        function get14() {
+          let scj = document.getElementById("hid").classList.toggle("myclass1");
+          scj
+            ? (document.getElementById("cha").innerHTML = "Show")
+            : (document.getElementById("cha").innerHTML = "hidden");
+        }
+      </script>
+      <br />
+      <br />
+      <h1 onclick="out5()" id="sam4">Hello, How are you ?</h1>
+      <h1 ondblclick="out4()" id="sam5">Hello</h1>
+      <script>
+        function out5() {
+          document.getElementById("sam4").innerHTML = "i am fine";
+        }
+
+        function out4() {
+          document.getElementById("sam5").classList.add("over");
+        }
+      </script>
+      <!-- onmouseout & onmouseover -->
+      <h1 onmouseover="get15()" onmouseout="get16()" id="out8">❤</h1>
+      <script>
+        function get15() {
+          document.getElementById("out8").innerHTML = "☢";
+        }
+        function get16() {
+          document.getElementById("out8").innerHTML = "❤";
+        }
+      </script>
+      <hr />
+      <label for="name">Name : </label
+      ><input type="text" name="name" id="" onmouseup="get17()" />
+      <script>
+        function get17() {
+          alert("on mouse down ");
+        }
+      </script>
+    </div>
+    <hr />
+    <div>
+      <h1>Keyboard Event</h1>
+      <input type="text" name="" onkeydown="get18()" />
+      <p id="coun">No of key press : 0</p>
+      <br />
+      <input type="text" name="" onkeypress="get19()" />
+      <p id="cou12">No of key press : 0</p>
+      <br />
+      <input type="text" name="" id="low" onkeyup="get20()" />
+      <h3 id="out9"></h3>
+      <script>
+        let cou = null;
+        function get18() {
+          console.log("you press a key ");
+          cou++;
+          document.getElementById(
+            "coun"
+          ).innerHTML = `No of key press : ${cou}`;
+        }
+        let cou1 = null;
+        function get19() {
+          console.log("you press a key ");
+          cou1++;
+          document.getElementById(
+            "cou12"
+          ).innerHTML = `No of key press : ${cou1}`;
+        }
+        function get20() {
+          let ele = document.getElementById("low").value.toUpperCase();
+          document.getElementById("low").innerHTML = ele;
+        }
+      </script>
+    </div>
+    <hr />
+    <div>
+      <h2>Form event</h2>
+      <form onsubmit="logIn()">
+        <label for="">username : </label
+        ><input type="text" name="" id="" /><br /><br />
+        <label for="">Password : </label
+        ><input type="password" name="" id="" /><br /><br />
+        <input type="submit" value="Submit" />
+        <button type="button">Cancel</button>
+      </form>
+      <script>
+        function logIn() {
+          alert("form is accpeted! ");
+        }
+      </script>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <div>
+      <label for="">onchange() : </label>
+      <select name="chose" id="yo" onchange="out6()">
+        <option value=""></option>
+        <option value="Maduari">Maduari</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Virudhunagar">Virudhunagar</option>
+        <option value="Ramanathapuram">Ramanathapuram</option>
+        <option value="thiruchi">thiruchi</option>
+      </select>
+      <h3>your select : <span id="ui"></span></h3>
+
+      <script>
+        function out6() {
+          let oji = document.getElementById("yo").value;
+          document.getElementById("ui").innerHTML = oji;
+        }
+      </script>
+      <br />
+      <label for="">oninput : </label
+      ><input type="text" name="vail" id="vail" oninput="inp()" />
+      <h3>you Enter : <span id="ouy"></span></h3>
+      <script>
+        function inp() {
+          let cha = document.getElementById("vail").value;
+          document.getElementById("ouy").innerHTML = cha;
+        }
+      </script>
+      <h1>Focus Event</h1>
+      <label for="">onfocus() & onblur() : </label
+      ><input
+        type="text"
+        id="fou"
+        onfocus="foc()"
+        onblur="blu()"
+        value="hello"
+      />
+      <script>
+        function foc() {
+          let ser = document.getElementById("fou").classList.add("shake");
+        }
+        function blu() {
+          let ser = document.getElementById("fou").classList.remove("shake");
+        }
+      </script>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <div>
+      <h3>Count of onscroll() = <span id="cot"></span></h3>
+      <div class="para" onscroll="scr()">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ipsum
+        facere aliquam. Laudantium, similique at sunt distinctio inventore qui
+        ratione quibusdam tempore a perferendis. Ducimus, porro. Rerum rem
+        temporibus eum. Commodi repellendus ullam laudantium ab, necessitatibus
+        sequi temporibus magnam fugiat perspiciatis velit nam voluptatibus nihil
+        officia eligendi eaque in nisi, ducimus obcaecati dolores? Ipsum earum
+        eos facilis quibusdam maiores vero? Sapiente, blanditiis repellat! Atque
+        cum eum fuga omnis voluptatum dolorum sequi ratione, repellat quos quo
+        vero odio quod sit quibusdam ut a corrupti obcaecati ipsum. Vero quia
+        ducimus optio magni? Eveniet incidunt eius veniam dignissimos doloremque
+        mollitia natus aliquid sint aspernatur obcaecati, excepturi voluptas
+        repellat laboriosam voluptatibus odit tenetur? Ipsa, quod! Velit harum
+        facilis culpa error? Perferendis veritatis similique fugiat? Beatae
+        quia, modi fugit, sed distinctio veniam hic aperiam reprehenderit ipsum
+        placeat corrupti! Cum omnis incidunt culpa laboriosam fugiat quas enim
+        officia eligendi est dolor, expedita voluptate fugit velit eveniet!
+        Asperiores, quam exercitationem magni rerum modi neque nemo. Inventore
+        nobis expedita error, sequi eaque voluptas optio, officiis ratione culpa
+        sint porro ab quisquam ipsa cumque explicabo obcaecati nostrum delectus.
+        Suscipit. Officia vero repellat voluptatem, in magnam iure fuga,
+        possimus facere dolor aperiam laborum accusantium. Quod doloribus iusto
+        molestiae aperiam esse, tempora, recusandae deserunt ullam voluptates
+        incidunt reprehenderit sunt, magni repellat. Vero, doloremque rerum
+        omnis doloribus ratione praesentium facere ea nesciunt architecto
+        corrupti fuga aut et provident adipisci quis amet eveniet aliquid?
+        Perferendis nemo doloremque voluptatem sint dolor iusto nulla quas. Quae
+        unde sapiente numquam reprehenderit quo vel quaerat a nesciunt? Soluta
+        enim est qui. Assumenda, natus molestias amet pariatur illum
+        consectetur, rerum eveniet molestiae asperiores porro delectus officia
+        voluptas aliquid. Doloremque voluptas vel delectus ipsam blanditiis
+        ipsa, recusandae ea consequuntur maiores sit. Ipsum autem asperiores
+        recusandae cupiditate id, laudantium voluptatibus deleniti provident.
+        Ipsum, ea maxime ipsam commodi ex esse repellendus! Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Nihil numquam sed assumenda
+        veniam dolor unde velit ut. Similique quas expedita consequuntur
+        excepturi perferendis. Laborum ipsa omnis odio dolorum quidem ipsum.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia in
+        asperiores dolorem ea recusandae vero corrupti voluptates doloremque
+        consectetur numquam laboriosam dignissimos assumenda, modi sit,
+        repellendus delectus alias aliquam? Cum! Aliquid, libero tenetur
+        asperiores pariatur ducimus autem alias dignissimos iure deserunt quis
+        perspiciatis ratione ea non tempore velit, aspernatur corporis nobis!
+        Explicabo ratione at consequuntur recusandae unde debitis voluptas quae.
+        Sunt nihil tempore, quod nam reiciendis ipsum, provident in minus
+        adipisci ad possimus necessitatibus eius, asperiores nemo nisi? Illum
+        hic natus expedita fugit accusamus pariatur numquam enim ut nam
+        perspiciatis. Distinctio dignissimos nisi minus, obcaecati neque
+        asperiores laboriosam alias ut facilis a fuga quisquam exercitationem
+        quia itaque adipisci. Doloremque numquam quidem facere id earum dolores
+        praesentium commodi quos. Voluptatibus, saepe. Quo, non, libero aperiam
+        repellat ex tempora cumque fugiat, possimus corporis veritatis obcaecati
+        distinctio. Aliquid quo numquam praesentium. Voluptas nesciunt optio
+        sint nisi fuga esse sunt nostrum distinctio maxime eos! Inventore quos
+        facilis, suscipit et enim molestiae neque aliquid possimus, autem natus
+        facere quaerat nihil illo reprehenderit, fugiat ipsum adipisci
+        temporibus ipsam quidem ut beatae eveniet atque. Ut, in quos!
+      </div>
+      <script>
+        let qwe = 0;
+        function scr() {
+          document.getElementById("cot").innerHTML = qwe++;
+        }
+      </script>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <div>
+      <h1>Event Listener</h1>
+      <form action="" id="from-in">
+        <label for="">Username</label><input type="text" name="" id="" /><br />
+        <label for="">Password</label
+        ><input type="password" name="" id="" /><br />
+        <button type="submit">Login</button>
+      </form>
+      <script>
+        document.getElementById("form-in").addEventListener("submit", () => {
+          alert("login is Successfully");
+        });
+      </script>
+    </div>
+  </body>
+</html>
